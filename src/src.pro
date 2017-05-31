@@ -17,6 +17,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 macx:INCLUDEPATH += "../thirdparty/opencv3.2.0/macOS/include"
 macx:LIBS += -L"$$PWD/../thirdparty/opencv3.2.0/macOS/lib" -lopencv_core
 
+win32 {
+    INCLUDEPATH += "../thirdparty/opencv3.2.0/windows/include"
+    LIBS += -L"$$PWD/../thirdparty/opencv3.2.0/windows/$$QMAKE_HOST.arch/vc14/lib"
+    opencv.path = $$PWD/../thirdparty/opencv3.2.0/windows/$$QMAKE_HOST.arch/vc14/bin
+    CONFIG(debug, debug|release) {
+        LIBS += -lopencv_core320d
+        QMAKE_POST_LINK += copy /y "$$shell_path($$opencv.path/opencv_core320d.dll)" "$$shell_path($$OUT_PWD/debug)"
+    } else {
+        LIBS += -lopencv_core320
+        QMAKE_POST_LINK += copy /y "$$shell_path($$opencv.path/opencv_core320.dll)" "$$shell_path($$OUT_PWD/release)"
+    }
+}
+
 SOURCES += main.cpp \
     mainwindow.cpp
 
