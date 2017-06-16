@@ -8,6 +8,11 @@ ExtensionFactory::ExtensionFactory(ExtensionManager* parent) :
 {
 }
 
+ExtensionFactory::~ExtensionFactory()
+{
+
+}
+
 QObject *ExtensionFactory::extension(QObject *object, const QString &iid) const
 {
     return impl_->extension(const_cast<ExtensionFactory*>(this), object, iid);

@@ -20,6 +20,7 @@ class ExtensionFactory : public QObject, public AbstractExtensionFactory
     friend class ExtensionFactoryPrivate;
 public:
     explicit ExtensionFactory(ExtensionManager* parent = nullptr);
+    ~ExtensionFactory();
 
     QObject* extension(QObject* object, const QString& iid) const override;
     ExtensionManager* extensionManager() const;
