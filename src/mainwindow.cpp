@@ -12,9 +12,6 @@
 #include <iostream>
 #include <vector>
 
-namespace Ya
-{
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -52,5 +49,3 @@ MainWindow::~MainWindow()
 {
 
 }
-
-}  // namespace Ya

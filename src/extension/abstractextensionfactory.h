@@ -11,21 +11,13 @@
 
 #include <QtCore/QObject>
 
-namespace Ya
+class QString;
+class AbstractExtensionFactory
 {
-
-class YaTest : public QObject
-{
-    Q_OBJECT
-
 public:
-    YaTest();
+    virtual ~AbstractExtensionFactory() {}
 
-private Q_SLOTS:
-    void initTestCase();
-    void cleanupTestCase();
-    void testCast1_data();
-    void testCast1();
+    virtual QObject* extension(QObject* object, const QString& iid) const = 0;
 };
 
-}  // namespace Ya
+Q_DECLARE_INTERFACE(AbstractExtensionFactory, "bitdewy.Ya.AbstractExtensionFactory")

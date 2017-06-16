@@ -7,14 +7,20 @@
 **
 ****************************************************************************/
 
-#include "mainwindow.h"
-#include <QtWidgets/QApplication>
+#pragma once
 
-int main(int argc, char *argv[])
+#include <QtCore/QObject>
+
+class YaTest : public QObject
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    Q_OBJECT
 
-    return a.exec();
-}
+public:
+    YaTest();
+
+private Q_SLOTS:
+    void initTestCase();
+    void cleanupTestCase();
+    void testCast1_data();
+    void testCast1();
+};

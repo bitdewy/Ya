@@ -7,11 +7,8 @@
 **
 ****************************************************************************/
 
-#include "yatest.h"
+#include "ya_test.h"
 #include <QtTest>
-
-namespace Ya
-{
 
 YaTest::YaTest()
 {
@@ -36,5 +33,3 @@ void YaTest::testCast1()
     QFETCH(QString, data);
     QVERIFY2(true, "Failure");
 }
-
-}  // namespace Ya

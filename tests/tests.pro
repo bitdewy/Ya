@@ -21,8 +21,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp \
-    yatest.cpp
+    ya_test.cpp
 
-HEADERS += yatest.h
+HEADERS += \
+    ya_test.h
 
 DEFINES += SRCDIR=\\\"$$PWD/\\\"

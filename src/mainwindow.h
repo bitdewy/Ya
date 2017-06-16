@@ -11,17 +11,10 @@
 
 #include <QtWidgets/QMainWindow>
 
-namespace Ya
-{
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 };
-
-}  // namespace Ya
-

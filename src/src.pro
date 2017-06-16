@@ -31,6 +31,16 @@ win32 {
 }
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    extension/extensionmanager.cpp \
+    extension/extensionfactory.cpp \
+    extension/private/extensionfactory_p.cpp \
+    extension/private/extensionmanager_p.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    extension/abstractextensionfactory.h \
+    extension/abstractextensionmanager.h \
+    extension/extensionmanager.h \
+    extension/extensionfactory.h \
+    extension/private/extensionfactory_p.h \
+    extension/private/extensionmanager_p.h
