@@ -9,6 +9,8 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+include(extension/extension.pri)
+
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
@@ -31,16 +33,6 @@ win32 {
 }
 
 SOURCES += main.cpp \
-    mainwindow.cpp \
-    extension/extensionmanager.cpp \
-    extension/extensionfactory.cpp \
-    extension/private/extensionfactory_p.cpp \
-    extension/private/extensionmanager_p.cpp
+    mainwindow.cpp
 
-HEADERS  += mainwindow.h \
-    extension/abstractextensionfactory.h \
-    extension/abstractextensionmanager.h \
-    extension/extensionmanager.h \
-    extension/extensionfactory.h \
-    extension/private/extensionfactory_p.h \
-    extension/private/extensionmanager_p.h
+HEADERS  += mainwindow.h

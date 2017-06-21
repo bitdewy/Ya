@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <extension/abstractextensionmanager.h>
+#include "abstractextensionmanager.h"
 
 class ExtensionManagerPrivate;
 class ExtensionManager : public QObject, public AbstractExtensionManager

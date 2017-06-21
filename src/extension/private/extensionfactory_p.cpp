@@ -1,5 +1,5 @@
 #include "extensionfactory_p.h"
-#include "extension/extensionfactory.h"
+#include "extensionfactory.h"
 
 ExtensionFactoryPrivate::ExtensionFactoryPrivate()
 {
@@ -11,7 +11,7 @@ ExtensionFactoryPrivate::~ExtensionFactoryPrivate()
 
 }
 
-QObject* ExtensionFactoryPrivate::extension(ExtensionFactory *factory, QObject *object, const QString &iid)
+QObject* ExtensionFactoryPrivate::extension(ExtensionFactory* factory, QObject* object, const QString& iid)
 {
     if (!object)
     {
@@ -24,14 +24,14 @@ QObject* ExtensionFactoryPrivate::extension(ExtensionFactory *factory, QObject *
     {
         if (auto ext = factory->createExtension(object, iid, factory))
         {
-            QObject::connect(ext, &QObject::destroyed, [this](QObject* o){ objectDestroyed(o); });
+            QObject::connect(ext, &QObject::destroyed, [this](QObject* o) { objectDestroyed(o); });
             it = extensions_.insert(key, ext);
         }
     }
 
     if (!extended_.contains(object))
     {
-        QObject::connect(object, &QObject::destroyed, [this](QObject* o){ objectDestroyed(o); });
+        QObject::connect(object, &QObject::destroyed, [this](QObject* o) { objectDestroyed(o); });
         extended_.insert(object, true);
     }
 
@@ -45,12 +45,16 @@ QObject* ExtensionFactoryPrivate::extension(ExtensionFactory *factory, QObject *
 
 void ExtensionFactoryPrivate::objectDestroyed(QObject* object)
 {
-    for (auto it = extensions_.begin(); it != extensions_.end(); ++it)
+    for (auto it = extensions_.begin(); it != extensions_.end();)
     {
         auto o = it.key().second;
         if (o == object || object == it.value())
         {
             it = extensions_.erase(it);
+        }
+        else
+        {
+            ++it;
         }
     }
     extended_.remove(object);

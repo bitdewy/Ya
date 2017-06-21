@@ -1,5 +1,5 @@
 #include "extensionmanager_p.h"
-#include "extension/abstractextensionfactory.h"
+#include "abstractextensionfactory.h"
 
 ExtensionManagerPrivate::ExtensionManagerPrivate()
 {

@@ -1,6 +1,6 @@
 #include "extensionfactory.h"
-#include "extension/extensionmanager.h"
-#include "extension/private/extensionfactory_p.h"
+#include "extensionmanager.h"
+#include "private/extensionfactory_p.h"
 
 ExtensionFactory::ExtensionFactory(ExtensionManager* parent) :
     QObject(parent),
@@ -13,12 +13,12 @@ ExtensionFactory::~ExtensionFactory()
 
 }
 
-QObject *ExtensionFactory::extension(QObject *object, const QString &iid) const
+QObject* ExtensionFactory::extension(QObject* object, const QString& iid) const
 {
     return impl_->extension(const_cast<ExtensionFactory*>(this), object, iid);
 }
 
-ExtensionManager *ExtensionFactory::extensionManager() const
+ExtensionManager* ExtensionFactory::extensionManager() const
 {
     return static_cast<ExtensionManager*>(parent());
 }

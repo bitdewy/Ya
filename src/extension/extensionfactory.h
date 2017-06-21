@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <extension/abstractextensionfactory.h>
+#include "abstractextensionfactory.h"
 
 class ExtensionManager;
 class ExtensionFactoryPrivate;
