@@ -18,6 +18,9 @@ class PropertyPrivate
 {
 public:
     PropertyPrivate(AbstractPropertyManager* manager);
+    PropertyPrivate(const PropertyPrivate&) = delete;
+    PropertyPrivate& operator=(const PropertyPrivate&) = delete;
+
     Property* propertyPtr_;
 
     QSet<Property*> parentItems_;

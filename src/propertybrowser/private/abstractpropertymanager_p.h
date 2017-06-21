@@ -9,7 +9,6 @@
 
 #pragma once
 
-#include <QtCore/QObject>
 #include <QtCore/QSet>
 
 class Property;

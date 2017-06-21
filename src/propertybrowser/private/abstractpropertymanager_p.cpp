@@ -35,12 +35,14 @@ void AbstractPropertyManagerPrivate::propertyChanged(Property* property) const
     emit propertyManagerPtr_->propertyChanged(property);
 }
 
-void AbstractPropertyManagerPrivate::propertyRemoved(Property* property, Property* parentProperty) const
+void AbstractPropertyManagerPrivate::propertyRemoved(Property* property,
+        Property* parentProperty) const
 {
     emit propertyManagerPtr_->propertyRemoved(property, parentProperty);
 }
 
-void AbstractPropertyManagerPrivate::propertyInserted(Property* property, Property* parentProperty, Property* afterProperty) const
+void AbstractPropertyManagerPrivate::propertyInserted(Property* property,
+        Property* parentProperty, Property* afterProperty) const
 {
     emit propertyManagerPtr_->propertyInserted(property, parentProperty, afterProperty);
 }

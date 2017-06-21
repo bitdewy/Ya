@@ -12,8 +12,9 @@
 #include "private/abstractpropertymanager_p.h"
 #include <QtGui/QIcon>
 
-AbstractPropertyManager::AbstractPropertyManager(QObject* parent)
-    : QObject(parent), impl_(new AbstractPropertyManagerPrivate)
+AbstractPropertyManager::AbstractPropertyManager(QObject* parent) :
+    QObject(parent),
+    impl_(new AbstractPropertyManagerPrivate)
 {
     impl_->propertyManagerPtr_ = this;
 }

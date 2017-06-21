@@ -11,6 +11,7 @@
 
 #include "abstracteditorfactorybase.h"
 #include "property.h"
+#include <QtCore/QSet>
 
 template <class PropertyManager>
 class AbstractEditorFactory : public AbstractEditorFactoryBase

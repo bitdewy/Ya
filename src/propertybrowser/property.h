@@ -49,6 +49,9 @@ public:
 
 protected:
     explicit Property(AbstractPropertyManager* manager);
+    Property(const Property&) = delete;
+    Property& operator=(const Property&) = delete;
+
     void propertyChanged();
 
 private:
