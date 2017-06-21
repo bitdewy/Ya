@@ -9,6 +9,7 @@ TEMPLATE = app
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
+include(propertybrowser/propertybrowser.pri)
 include(extension/extension.pri)
 
 # You can also make your code fail to compile if you use deprecated APIs.
@@ -32,7 +33,9 @@ win32 {
     }
 }
 
-SOURCES += main.cpp \
+SOURCES += \
+    main.cpp \
     mainwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    mainwindow.h
