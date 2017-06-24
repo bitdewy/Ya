@@ -14,12 +14,12 @@
 
 class QObject;
 class QWidget;
+class QLayout;
 class Property;
 template <typename Editor>
 class EditorFactoryPrivate
 {
 public:
-
     using EditorList = QList<Editor*>;
     using PropertyToEditorListMap = QMap<Property*, EditorList>;
     using EditorToPropertyMap = QMap<Editor*, Property*> ;
@@ -75,3 +75,6 @@ public:
     PropertyToEditorListMap createdEditors_;
     EditorToPropertyMap editorToProperty_;
 };
+
+
+void setupTreeViewEditorMargin(QLayout* lt);
