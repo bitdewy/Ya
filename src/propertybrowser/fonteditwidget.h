@@ -18,7 +18,7 @@ class FontEditWidget : public QWidget
     Q_OBJECT
 
 public:
-    FontEditWidget(QWidget* parent);
+    explicit FontEditWidget(QWidget* parent);
 
     bool eventFilter(QObject* obj, QEvent* ev);
 
