@@ -53,7 +53,7 @@ bool CharEditWidget::eventFilter(QObject* o, QEvent* e)
         auto clearAction = new QAction(tr("Clear Char"), menu);
         menu->insertAction(actionBefore, clearAction);
         menu->insertSeparator(actionBefore);
-        clearAction->setEnabled(!m_value.isNull());
+        clearAction->setEnabled(!value_.isNull());
         connect(clearAction, &QAction::triggered, this, &CharEditWidget::slotClearChar);
         menu->exec(c->globalPos());
         delete menu;
@@ -65,12 +65,12 @@ bool CharEditWidget::eventFilter(QObject* o, QEvent* e)
 
 void CharEditWidget::slotClearChar()
 {
-    if (m_value.isNull())
+    if (value_.isNull())
     {
         return;
     }
     setValue(QChar());
-    emit valueChanged(m_value);
+    emit valueChanged(value_);
 }
 
 void CharEditWidget::handleKeyEvent(QKeyEvent* e)
@@ -99,31 +99,31 @@ void CharEditWidget::handleKeyEvent(QKeyEvent* e)
     {
         return;
     }
-    if (m_value == c)
+    if (value_ == c)
     {
         return;
     }
-    m_value = c;
-    const auto str = m_value.isNull() ? QString() : QString(m_value);
+    value_ = c;
+    const auto str = value_.isNull() ? QString() : QString(value_);
     lineEdit_->setText(str);
     e->accept();
-    emit valueChanged(m_value);
+    emit valueChanged(value_);
 }
 
 void CharEditWidget::setValue(const QChar& value)
 {
-    if (value == m_value)
+    if (value == value_)
     {
         return;
     }
-    m_value = value;
+    value_ = value;
     auto str = value.isNull() ? QString() : QString(value);
     lineEdit_->setText(str);
 }
 
 QChar CharEditWidget::value() const
 {
-    return m_value;
+    return value_;
 }
 
 void CharEditWidget::focusInEvent(QFocusEvent* e)

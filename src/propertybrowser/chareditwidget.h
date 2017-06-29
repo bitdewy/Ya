@@ -35,6 +35,6 @@ private slots:
 private:
     void handleKeyEvent(QKeyEvent* e);
 
-    QChar m_value;
+    QChar value_;
     QLineEdit* lineEdit_;
 };
