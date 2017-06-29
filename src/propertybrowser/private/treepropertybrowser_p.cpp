@@ -17,7 +17,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtGui/QPainter>
 
-
 static QIcon drawIndicatorIcon(const QPalette& palette, QStyle* style)
 {
     QPixmap pix(14, 14);
@@ -29,13 +28,13 @@ static QIcon drawIndicatorIcon(const QPalette& palette, QStyle* style)
     branchOption.state = QStyle::State_Children;
 
     QPainter p;
-    // Draw closed state
+
     p.begin(&pix);
     style->drawPrimitive(QStyle::PE_IndicatorBranch, &branchOption, &p);
     p.end();
     QIcon rc = pix;
     rc.addPixmap(pix, QIcon::Selected, QIcon::Off);
-    // Draw opened state
+
     branchOption.state |= QStyle::State_Open;
     pix.fill(Qt::transparent);
     p.begin(&pix);
@@ -140,7 +139,7 @@ bool TreePropertyBrowserPrivate::lastColumn(int column) const
 
 void TreePropertyBrowserPrivate::disableItem(QTreeWidgetItem* item) const
 {
-    Qt::ItemFlags flags = item->flags();
+    auto flags = item->flags();
     if (flags & Qt::ItemIsEnabled)
     {
         flags &= ~Qt::ItemIsEnabled;
@@ -253,7 +252,7 @@ void TreePropertyBrowserPrivate::updateItem(QTreeWidgetItem* item)
     item->setWhatsThis(0, property->whatsThis());
     item->setText(0, propertyName);
     bool wasEnabled = item->flags() & Qt::ItemIsEnabled;
-    bool isEnabled = wasEnabled;
+    auto isEnabled = wasEnabled;
     if (property->isEnabled())
     {
         auto parent = item->parent();
