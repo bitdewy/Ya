@@ -25,8 +25,8 @@ public:
     ~AbstractPropertyBrowser();
 
     QList<Property*> properties() const;
-    QList<BrowserItem*> items(Property *property) const;
-    BrowserItem* topLevelItem(Property *property) const;
+    QList<BrowserItem*> items(Property* property) const;
+    BrowserItem* topLevelItem(Property* property) const;
     QList<BrowserItem*> topLevelItems() const;
     void clear();
 
@@ -45,7 +45,7 @@ public:
 
     void unsetFactoryForManager(AbstractPropertyManager* manager);
 
-    BrowserItem *currentItem() const;
+    BrowserItem* currentItem() const;
     void setCurrentItem(BrowserItem*);
 
 Q_SIGNALS:
@@ -66,13 +66,13 @@ protected:
     virtual QWidget* createEditor(Property* property, QWidget* parent);
 private:
     void slotPropertyInserted(Property* property,
-            Property* parentProperty, Property* afterProperty);
+        Property* parentProperty, Property* afterProperty);
     void slotPropertyRemoved(Property* property, Property* parentProperty);
     void slotPropertyDestroyed(Property* property);
     void slotPropertyDataChanged(Property* property);
 
     bool addFactory(AbstractPropertyManager* abstractManager,
-                AbstractEditorFactoryBase* abstractFactory);
+        AbstractEditorFactoryBase* abstractFactory);
 
     QScopedPointer<AbstractPropertyBrowserPrivate> impl_;
     friend class AbstractPropertyBrowserPrivate;
