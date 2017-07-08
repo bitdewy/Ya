@@ -9,6 +9,17 @@
 
 #include "doublepropertymanager_p.h"
 #include "propertymanager/private/propertymanagerutils_p.h"
+#include <cfloat>
+
+DoublePropertyManagerPrivate::Data::Data() :
+    val(0),
+    minVal(-DBL_MAX),
+    maxVal(DBL_MAX),
+    singleStep(1),
+    decimals(2)
+{
+
+}
 
 double DoublePropertyManagerPrivate::Data::minimumValue() const
 {

@@ -21,11 +21,12 @@ public:
 
     struct Data
     {
-        double val{0};
-        double minVal{-DBL_MAX};
-        double maxVal{DBL_MAX};
-        double singleStep{1};
-        int decimals{2};
+        Data();
+        double val;
+        double minVal;
+        double maxVal;
+        double singleStep;
+        int decimals;
         double minimumValue() const;
         double maximumValue() const;
         void setMinimumValue(double newMinVal);
