@@ -113,12 +113,12 @@ static SizeValue qBoundSize(const SizeValue& minVal, const SizeValue& val, const
     return croppedVal;
 }
 
-static QSize qBound(QSize minVal, QSize val, QSize maxVal)
+static inline QSize qBound(QSize minVal, QSize val, QSize maxVal)
 {
     return qBoundSize(minVal, val, maxVal);
 }
 
-static QSizeF qBound(QSizeF minVal, QSizeF val, QSizeF maxVal)
+static inline QSizeF qBound(QSizeF minVal, QSizeF val, QSizeF maxVal)
 {
     return qBoundSize(minVal, val, maxVal);
 }
@@ -151,12 +151,12 @@ static void orderSizeBorders(Value& minVal, Value& maxVal)
     maxVal = toSize;
 }
 
-static void orderBorders(QSize& minVal, QSize& maxVal)
+static inline void orderBorders(QSize& minVal, QSize& maxVal)
 {
     orderSizeBorders(minVal, maxVal);
 }
 
-static void orderBorders(QSizeF& minVal, QSizeF& maxVal)
+static inline void orderBorders(QSizeF& minVal, QSizeF& maxVal)
 {
     orderSizeBorders(minVal, maxVal);
 }
