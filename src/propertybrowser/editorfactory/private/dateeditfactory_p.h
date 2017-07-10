@@ -9,7 +9,6 @@
 
 #pragma once
 
-#include "dateeditfactory_p.h"
 #include "editorfactory_p.h"
 #include <QtWidgets/QDateTimeEdit>
 
