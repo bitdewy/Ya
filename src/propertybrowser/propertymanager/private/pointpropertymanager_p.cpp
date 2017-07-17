@@ -11,6 +11,11 @@
 #include "propertymanager/pointpropertymanager.h"
 #include <QtCore/QPoint>
 
+PointPropertyManagerPrivate::PointPropertyManagerPrivate()
+{
+
+}
+
 void PointPropertyManagerPrivate::slotIntChanged(Property* property, int value)
 {
     if (auto xprop = xToProperty_.value(property, nullptr))

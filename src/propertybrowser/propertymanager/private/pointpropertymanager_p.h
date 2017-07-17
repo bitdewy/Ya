@@ -20,6 +20,9 @@ class PointPropertyManagerPrivate
     PointPropertyManager* pointPropertyManagerPtr_;
     friend class PointPropertyManager;
 public:
+    PointPropertyManagerPrivate();
+    PointPropertyManagerPrivate(const PointPropertyManagerPrivate&) = delete;
+    PointPropertyManagerPrivate operator=(const PointPropertyManagerPrivate&) = delete;
 
     void slotIntChanged(Property* property, int value);
     void slotPropertyDestroyed(Property* property);
