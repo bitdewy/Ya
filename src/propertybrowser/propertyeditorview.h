@@ -20,7 +20,7 @@ public:
 
     void setEditorPrivate(TreePropertyBrowserPrivate* editorPrivate);
 
-    QTreeWidgetItem* indexToItem(const QModelIndex &index) const;
+    QTreeWidgetItem* indexToItem(const QModelIndex& index) const;
 
 protected:
     void keyPressEvent(QKeyEvent* event);
