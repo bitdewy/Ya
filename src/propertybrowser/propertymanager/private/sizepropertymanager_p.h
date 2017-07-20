@@ -17,7 +17,7 @@ class IntPropertyManager;
 class SizePropertyManager;
 class SizePropertyManagerPrivate
 {
-    SizePropertyManager* q_ptr;
+    SizePropertyManager* sizePropertyManagerPtr_;
     friend class SizePropertyManager;
 public:
 

@@ -17,7 +17,7 @@ SizePropertyManager::SizePropertyManager(QObject* parent) :
     AbstractPropertyManager(parent),
     impl_(new SizePropertyManagerPrivate)
 {
-    impl_->q_ptr = this;
+    impl_->sizePropertyManagerPtr_ = this;
 
     impl_->intPropertyManager_ = new IntPropertyManager(this);
     connect(impl_->intPropertyManager_, &IntPropertyManager::valueChanged,

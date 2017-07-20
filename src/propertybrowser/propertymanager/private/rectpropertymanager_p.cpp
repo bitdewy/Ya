@@ -17,13 +17,13 @@ void RectPropertyManagerPrivate::slotIntChanged(Property* property, int value)
     {
         auto r = values_[prop].val;
         r.moveLeft(value);
-        q_ptr->setValue(prop, r);
+        rectPropertyManagerPtr_->setValue(prop, r);
     }
     else if (auto prop = yToProperty_.value(property))
     {
         auto r = values_[prop].val;
         r.moveTop(value);
-        q_ptr->setValue(prop, r);
+        rectPropertyManagerPtr_->setValue(prop, r);
     }
     else if (auto prop = wToProperty_.value(property, nullptr))
     {
@@ -34,7 +34,7 @@ void RectPropertyManagerPrivate::slotIntChanged(Property* property, int value)
         {
             r.moveLeft(data.constraint.left() + data.constraint.width() - r.width());
         }
-        q_ptr->setValue(prop, r);
+        rectPropertyManagerPtr_->setValue(prop, r);
     }
     else if (auto prop = hToProperty_.value(property, nullptr))
     {
@@ -45,7 +45,7 @@ void RectPropertyManagerPrivate::slotIntChanged(Property* property, int value)
         {
             r.moveTop(data.constraint.top() + data.constraint.height() - r.height());
         }
-        q_ptr->setValue(prop, r);
+        rectPropertyManagerPtr_->setValue(prop, r);
     }
 }
 

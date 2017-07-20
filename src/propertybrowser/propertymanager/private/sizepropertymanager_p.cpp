@@ -18,13 +18,13 @@ void SizePropertyManagerPrivate::slotIntChanged(Property* property, int value)
     {
         auto s = values_[prop].val;
         s.setWidth(value);
-        q_ptr->setValue(prop, s);
+        sizePropertyManagerPtr_->setValue(prop, s);
     }
     else if (auto prop = hToProperty_.value(property, 0))
     {
         auto s = values_[prop].val;
         s.setHeight(value);
-        q_ptr->setValue(prop, s);
+        sizePropertyManagerPtr_->setValue(prop, s);
     }
 }
 

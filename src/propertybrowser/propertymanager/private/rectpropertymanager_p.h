@@ -17,7 +17,7 @@ class RectPropertyManager;
 class IntPropertyManager;
 class RectPropertyManagerPrivate
 {
-    RectPropertyManager* q_ptr;
+    RectPropertyManager* rectPropertyManagerPtr_;
     friend class RectPropertyManager;
 public:
 

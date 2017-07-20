@@ -17,7 +17,7 @@ RectPropertyManager::RectPropertyManager(QObject* parent) :
     AbstractPropertyManager(parent),
     impl_(new RectPropertyManagerPrivate)
 {
-    impl_->q_ptr = this;
+    impl_->rectPropertyManagerPtr_ = this;
 
     impl_->intPropertyManager_ = new IntPropertyManager(this);
     connect(impl_->intPropertyManager_, &IntPropertyManager::valueChanged,
