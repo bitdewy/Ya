@@ -10,6 +10,7 @@
 #include "rectfpropertymanager_p.h"
 #include "propertymanager/rectfpropertymanager.h"
 #include "propertymanager/doublepropertymanager.h"
+#include <cfloat>
 
 void RectFPropertyManagerPrivate::slotDoubleChanged(Property* property, double value)
 {
