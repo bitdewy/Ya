@@ -379,7 +379,7 @@ VariantPropertyManager::~VariantPropertyManager()
     clear();
 }
 
-VariantProperty *VariantPropertyManager::variantProperty(const Property* property) const
+VariantProperty* VariantPropertyManager::variantProperty(const Property* property) const
 {
     const auto it = impl_->propertyToType_.constFind(property);
     if (it == impl_->propertyToType_.constEnd())

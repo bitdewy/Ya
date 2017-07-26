@@ -24,8 +24,8 @@ protected:
     QWidget* createEditor(EnumPropertyManager* manager, Property* property, QWidget* parent);
     void disconnectPropertyManager(EnumPropertyManager* manager);
 private:
-    void slotPropertyChanged(Property *property, int value);
-    void slotEnumNamesChanged(Property *property, const QStringList & enumNames);
+    void slotPropertyChanged(Property* property, int value);
+    void slotEnumNamesChanged(Property* property, const QStringList& enumNames);
     QScopedPointer<EnumEditorFactoryPrivate> impl_;
     friend class EnumEditorFactoryPrivate;
 };

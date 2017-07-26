@@ -24,7 +24,7 @@ public:
 public Q_SLOTS:
     void setValue(Property* property, const QDateTime& val);
 Q_SIGNALS:
-    void valueChanged(Property* property, const QDateTime&val);
+    void valueChanged(Property* property, const QDateTime& val);
 protected:
     QString valueText(const Property* property) const;
     virtual void initializeProperty(Property* property);

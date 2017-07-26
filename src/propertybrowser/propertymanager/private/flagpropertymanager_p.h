@@ -32,7 +32,7 @@ public:
         QStringList flagNames;
     };
 
-    using PropertyValueMap = QMap<const Property*, Data> ;
+    using PropertyValueMap = QMap<const Property*, Data>;
     PropertyValueMap values_;
 
     BoolPropertyManager* boolPropertyManager_;

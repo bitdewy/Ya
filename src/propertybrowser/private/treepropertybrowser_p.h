@@ -41,9 +41,9 @@ public:
     QTreeWidgetItem* indexToItem(const QModelIndex& index) const;
     BrowserItem* indexToBrowserItem(const QModelIndex& index) const;
     bool lastColumn(int column) const;
-    void disableItem(QTreeWidgetItem *item) const;
-    void enableItem(QTreeWidgetItem *item) const;
-    bool hasValue(QTreeWidgetItem *item) const;
+    void disableItem(QTreeWidgetItem* item) const;
+    void enableItem(QTreeWidgetItem* item) const;
+    bool hasValue(QTreeWidgetItem* item) const;
 
     void slotCollapsed(const QModelIndex& index);
     void slotExpanded(const QModelIndex& index);
