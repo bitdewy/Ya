@@ -10,6 +10,9 @@
 #pragma once
 
 #include <QtCore/QObject>
+#include <QtCOre/QString>
+
+#define TYPEID(IFace) QLatin1String(IFace##_iid)
 
 class QString;
 class AbstractExtensionFactory;
